@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import one.digitalinnovation.personapi.enums.PhoneType;
 
 import javax.persistence.*;
 
@@ -19,10 +18,9 @@ public class Belongings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)//gera id auto incrementavel
     private Long id;
 
-    //@Enumerated(EnumType.STRING)
     @Column(nullable = false)//indica ser campo obrigatorio no banco de dados
-    private String type;
+    private String name;
 
-    @Column(nullable = false, unique = true)
-    private String number;
+    @Column(nullable = false)
+    private String price;
 }

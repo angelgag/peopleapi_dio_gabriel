@@ -44,6 +44,7 @@ public class PersonController {
         return personService.listAll();
     }
 
+    //pathvariable indica que estou pegando o id
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public MessageResponseDTO update(@PathVariable Long id, @RequestBody @Valid PersonDTO personDTO) throws PersonNotFoundException {
@@ -54,5 +55,5 @@ public class PersonController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) throws PersonNotFoundException {
         personService.delete(id);
-    }//criar belongings com type e price
+    }
 }
