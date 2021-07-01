@@ -54,5 +54,5 @@ public class PersonController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) throws PersonNotFoundException {
         personService.delete(id);
-    }
+    }//criar belongings com type e price
 }

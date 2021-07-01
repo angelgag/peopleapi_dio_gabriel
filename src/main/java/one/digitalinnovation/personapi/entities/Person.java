@@ -34,11 +34,21 @@ public class Person {
     @Column(nullable = false)
     private String lastName;
 
+    //unique indica que cpf tem que ser unico
+    //(não pode ter mais de uma pessoa com o mesmo cpf)
     @Column(nullable = false, unique = true)
     private String cpf;
 
     private LocalDate birthDate;
 
+    //Lazy faz juncao de dados ou colocando os dados em uma transacao
+    //ou colocando na tela e fazendo um tal de joinFetch.
+    // Em resumo, torna a comunicacao entre as tabelas mais performatica
+    //cascade faz com que não seja obrigatorio cadastrar
+    //um phone para cadastrar uma pessoa
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Phone> phones = new ArrayList<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    private  List<Belongings> belongs = new ArrayList<>();
 }

@@ -25,7 +25,7 @@ public class Phone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)//fala que é um enum do tipo string
     @Column(nullable = false)
     private PhoneType type;
 
